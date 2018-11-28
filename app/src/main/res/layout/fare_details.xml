@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="ticket"
+            type="ex.com.ticketexample.viewmodel.TicketViewModel" />
+        
+
+    </data>
+    <android.support.v7.widget.CardView
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 <android.support.constraint.ConstraintLayout
@@ -15,11 +25,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="TextView"
+        android:text="GST:"
         android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ticketFareLabel"
-        tools:text="GST:" />
+        android:visibility="@{ticket.isFareExpanded ? View.VISIBLE : View.GONE}"/>
 
     <TextView
         android:id="@+id/totalFareLabel"
@@ -28,23 +38,23 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
+        android:text="Total Fare:"
         android:textColor="@android:color/black"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gstLabel"
-        tools:text="Total Fare:" />
+        app:layout_constraintTop_toBottomOf="@+id/gstLabel" />
 
     <TextView
         android:id="@+id/totalFareText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:text="TextView"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/totalFareLabel"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        android:text="@{String.valueOf(ticket.ticketFare + ticket.gstCharge)}"
         tools:text="1975.00" />
 
     <TextView
@@ -52,10 +62,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:text="TextView"
         android:textColor="@android:color/black"
         app:layout_constraintBaseline_toBaselineOf="@+id/ticketFareLabel"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        android:text="@{String.valueOf(ticket.ticketFare)}"
+        android:visibility="@{ticket.isFareExpanded ? View.VISIBLE : View.GONE}"
         tools:text="1925.00" />
 
     <TextView
@@ -64,20 +75,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:text="Ticket Fare:"
+        android:visibility="@{ticket.isFareExpanded ? View.VISIBLE : View.GONE}"
         android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Ticket Fare:" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/gstText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:text="TextView"
         android:textColor="@android:color/black"
         app:layout_constraintBaseline_toBaselineOf="@+id/gstLabel"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        android:text="@{String.valueOf(ticket.gstCharge)}"
+        android:visibility="@{ticket.isFareExpanded ? View.VISIBLE : View.GONE}"
         tools:text="50.00" />
 
     <android.support.constraint.Guideline
@@ -88,3 +101,4 @@
         app:layout_constraintGuide_end="28dp" />
 </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>
+</layout>

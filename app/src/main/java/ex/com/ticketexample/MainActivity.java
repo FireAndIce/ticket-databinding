@@ -3,8 +3,6 @@ package ex.com.ticketexample;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import ex.com.ticketexample.ui.main.MainFragment;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -13,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.main_activity);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container, MainFragment.newInstance())
+                    .replace(R.id.container, TicketFragment.newInstance())
                     .commitNow();
         }
     }

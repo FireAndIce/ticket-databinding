@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <import type="ex.com.ticketexample.model.Ticket.RailQuotas" />
+        <variable
+            name="ticket"
+            type="ex.com.ticketexample.viewmodel.TicketViewModel" />
+    </data>
+<android.support.v7.widget.CardView
 
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
 <android.support.constraint.ConstraintLayout
     android:layout_width="match_parent"
@@ -30,6 +36,7 @@
         android:textColor="@android:color/black"
         app:layout_constraintBaseline_toBaselineOf="@+id/pnrNoLabel"
         app:layout_constraintStart_toEndOf="@+id/pnrNoLabel"
+        android:text="@{String.valueOf(ticket.pnrNo)}"
         tools:text="7841236448" />
 
     <TextView
@@ -74,6 +81,7 @@
         android:textColor="@android:color/black"
         app:layout_constraintStart_toEndOf="@+id/trainNoLabel"
         app:layout_constraintTop_toTopOf="parent"
+        android:text="@{String.valueOf(ticket.trainNo)}"
         tools:text="54237" />
 
     <TextView
@@ -81,10 +89,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="TextView"
         android:textColor="@android:color/black"
         app:layout_constraintBaseline_toBaselineOf="@+id/quotaLabel"
         app:layout_constraintStart_toEndOf="@+id/quotaLabel"
+        android:text="@{ticket.quota}"
         tools:text="GENERAL" />
 
     <TextView
@@ -92,10 +100,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="TextView"
         android:textColor="@android:color/black"
         app:layout_constraintBaseline_toBaselineOf="@+id/transactionIdLabel"
         app:layout_constraintStart_toEndOf="@+id/transactionIdLabel"
+        android:text="@{String.valueOf(ticket.transactionId)}"
         tools:text="78945132456" />
 
     <android.support.constraint.Guideline
@@ -108,3 +116,4 @@
 </android.support.constraint.ConstraintLayout>
 
 </android.support.v7.widget.CardView>
+</layout>

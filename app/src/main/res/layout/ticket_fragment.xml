@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+    
+    <data>
+        <variable
+            name="ticket"
+            type="ex.com.ticketexample.viewmodel.TicketViewModel" />
+    </data>
+<android.support.constraint.ConstraintLayout 
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.MainFragment">
+    tools:context=".TicketFragment">
 
     <TextView
         android:id="@+id/message"
@@ -20,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <include
-        android:id="@+id/include1"
+        android:id="@+id/ticketInfoLayout"
         layout="@layout/ticket_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,10 +38,11 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/message" />
+        app:layout_constraintTop_toBottomOf="@+id/message"
+        bind:ticket="@{ticket}"/>
 
     <include
-        android:id="@+id/include"
+        android:id="@+id/journeyDetailsLayout"
         layout="@layout/journey_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,7 +51,8 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView30" />
+        app:layout_constraintTop_toBottomOf="@+id/textView30"
+        bind:ticket="@{ticket}"/>
 
     <TextView
         android:id="@+id/textView19"
@@ -53,9 +64,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include" />
+        app:layout_constraintTop_toBottomOf="@+id/journeyDetailsLayout" />
 
     <include
+        android:id="@+id/passengerDetailsLayout"
         layout="@layout/passenger_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,12 +76,11 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
-
-
+        app:layout_constraintTop_toBottomOf="@+id/textView19"
+        bind:ticket="@{ticket}" />
 
     <include
-        android:id="@+id/include2"
+        android:id="@+id/fareDetailsLayout"
         layout="@layout/fare_details"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -78,7 +89,8 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView37" />
+        app:layout_constraintTop_toBottomOf="@+id/textView37"
+        bind:ticket="@{ticket}"/>
 
     <TextView
         android:id="@+id/textView30"
@@ -90,7 +102,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include2" />
+        app:layout_constraintTop_toBottomOf="@+id/fareDetailsLayout" />
 
     <TextView
         android:id="@+id/textView37"
@@ -100,10 +112,20 @@
         android:layout_marginTop="8dp"
         android:text="Fare Details"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-
-
         android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include1" />
+        app:layout_constraintTop_toBottomOf="@+id/ticketInfoLayout" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:src="@{ticket.isFareExpanded ? @drawable/collapse : @drawable/expand}"
+        app:layout_constraintBottom_toBottomOf="@+id/textView37"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView37"
+        tools:src="@drawable/collapse" />
 
 </android.support.constraint.ConstraintLayout>
+</layout>
