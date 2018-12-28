@@ -5,7 +5,9 @@ import android.arch.lifecycle.ViewModel;
 import android.databinding.Bindable;
 import android.databinding.BindingAdapter;
 
-import org.threeten.bp.LocalDateTime;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import ex.com.ticketexample.model.Ticket;
 
@@ -24,8 +26,8 @@ public class TicketViewModel extends ViewModel {
     public String fromStation;
     public String toStation;
 
-    public String schDepDate;
-    public String schArrDate;
+    public LocalDateTime schDepDate;
+    public LocalDateTime schArrDate;
 
     public String passFname;
     public String passMname;
@@ -42,8 +44,22 @@ public class TicketViewModel extends ViewModel {
         return quota.name();
     }
 
+    public String getSchDepDate() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm a");
+        return schDepDate.format(formatter);
+    }
+
+    public String getSchArrDate() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm a");
+        return schArrDate.format(formatter);
+    }
+
     public String getAdults() {
         return String.valueOf(adults);
+    }
+
+    public String getChild() {
+        return String.valueOf(child);
     }
 
     public void toggleFare() {

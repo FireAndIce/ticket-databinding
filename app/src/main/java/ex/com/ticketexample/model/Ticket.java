@@ -1,6 +1,6 @@
 package ex.com.ticketexample.model;
 
-import org.threeten.bp.LocalDateTime;
+import java.time.LocalDateTime;
 
 /* Model of the application */
 public class Ticket {
@@ -23,8 +23,8 @@ public class Ticket {
     String fromStation;
     String toStation;
 
-    String schDepDate;
-    String schArrDate;
+    LocalDateTime schDepDate;
+    LocalDateTime schArrDate;
 
     String passFname;
     String passMname;
@@ -112,19 +112,19 @@ public class Ticket {
         this.toStation = toStation;
     }
 
-    public String getSchDepDate() {
+    public LocalDateTime getSchDepDate() {
         return schDepDate;
     }
 
-    public void setSchDepDate(String schDepDate) {
+    public void setSchDepDate(LocalDateTime schDepDate) {
         this.schDepDate = schDepDate;
     }
 
-    public String getSchArrDate() {
+    public LocalDateTime getSchArrDate() {
         return schArrDate;
     }
 
-    public void setSchArrDate(String schArrDate) {
+    public void setSchArrDate(LocalDateTime schArrDate) {
         this.schArrDate = schArrDate;
     }
 

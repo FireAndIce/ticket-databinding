@@ -48,7 +48,8 @@
         android:textColor="@android:color/black"
         app:layout_constraintBaseline_toBaselineOf="@+id/adultLabel"
         app:layout_constraintStart_toEndOf="@+id/adultLabel"
-        android:text="@{ticket.adults}"/>
+        android:text="@{ticket.adults}"
+        tools:text="4"/>
 
     <TextView
         android:id="@+id/childText"
@@ -59,7 +60,8 @@
         android:textColor="@android:color/black"
         app:layout_constraintBaseline_toBaselineOf="@+id/childLabel"
         app:layout_constraintStart_toEndOf="@+id/childLabel"
-        android:text="@{String.valueOf(ticket.child)}"/>
+        android:text="@{ticket.child}"
+        tools:text="4"/>
 
     <TextView
         android:id="@+id/passNameLabel"
@@ -133,22 +135,22 @@
         android:id="@+id/passMnameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
+        android:text="@{String.valueOf(ticket.passMname.charAt(0))}"
         android:textColor="@android:color/black"
         app:layout_constraintBaseline_toBaselineOf="@+id/passFnameText"
         app:layout_constraintStart_toEndOf="@+id/passFnameText"
-        android:text="@{String.valueOf(ticket.passMname.charAt(0))}"
         tools:text="Mohan" />
 
     <TextView
         android:id="@+id/passLnameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="8dp"
+        android:text="@{ticket.passLname}"
         android:textColor="@android:color/black"
         app:layout_constraintBaseline_toBaselineOf="@+id/passMnameText"
         app:layout_constraintStart_toEndOf="@+id/passMnameText"
-        android:text="@{ticket.passLname}"
         tools:text="Patel" />
 
     <android.support.constraint.Guideline

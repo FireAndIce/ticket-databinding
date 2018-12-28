@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.time.LocalDateTime;
+
 import ex.com.ticketexample.databinding.TicketFragmentBinding;
 import ex.com.ticketexample.model.Ticket;
 import ex.com.ticketexample.viewmodel.TicketViewModel;
@@ -106,6 +108,8 @@ public class TicketFragment extends Fragment {
         ticket.setTotalFare(ticket.getTicketFare() + ticket.getGstCharge());
         ticket.setFromStation("Surat");
         ticket.setToStation("Delhi");
+        ticket.setSchDepDate(LocalDateTime.now());
+        ticket.setSchArrDate(LocalDateTime.now().plusDays(1).plusHours(2));
 
         ticket.setPassFname("Sunny");
         ticket.setPassMname("Mohan");
