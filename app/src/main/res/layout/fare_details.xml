@@ -54,8 +54,10 @@
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/totalFareLabel"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        android:text="@{String.valueOf(ticket.ticketFare + ticket.gstCharge)}"
+
+        app:totalFareText="@{ticket}"
         tools:text="1975.00" />
+    <!--android:text="@{String.valueOf(ticket.ticketFare + ticket.gstCharge)}"-->
 
     <TextView
         android:id="@+id/ticketFareText"

@@ -2,14 +2,17 @@ package ex.com.ticketexample;
 
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModelProviders;
+import android.databinding.BindingAdapter;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.time.LocalDateTime;
 
@@ -18,6 +21,8 @@ import ex.com.ticketexample.model.Ticket;
 import ex.com.ticketexample.viewmodel.TicketViewModel;
 
 public class TicketFragment extends Fragment {
+    public static final String TAG = TicketFragment.class.getName();
+
     // The Model
     private Ticket ticket;
 
@@ -123,4 +128,11 @@ public class TicketFragment extends Fragment {
         return ticket;
     }
 
+
+    @BindingAdapter("totalFareText")
+    public static void computeTotalFare(TextView view, TicketViewModel ticketViewModel) {
+        Log.d(TAG, "In computeTotalFare()");
+        view.setText(String.valueOf(ticketViewModel.getTotalFare()));
+
+    }
 }

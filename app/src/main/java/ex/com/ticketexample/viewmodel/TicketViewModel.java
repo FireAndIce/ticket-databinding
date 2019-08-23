@@ -66,5 +66,8 @@ public class TicketViewModel extends ViewModel {
         isFareExpanded.setValue(!isFareExpanded.getValue());
     }
 
+    public Double getTotalFare() {
+        return ticketFare + gstCharge;
+    }
 
 }
