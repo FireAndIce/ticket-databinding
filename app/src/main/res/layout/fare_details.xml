@@ -26,10 +26,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="GST:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
+        android:visibility="@{ticket.isFareExpanded ? View.VISIBLE : View.GONE}"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ticketFareLabel"
-        android:visibility="@{ticket.isFareExpanded ? View.VISIBLE : View.GONE}"/>
+        app:layout_constraintTop_toBottomOf="@+id/ticketFareLabel" />
 
     <TextView
         android:id="@+id/totalFareLabel"
@@ -39,6 +40,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:text="Total Fare:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,11 +52,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/totalFareLabel"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-
         app:totalFareText="@{ticket}"
         tools:text="1975.00" />
     <!--android:text="@{String.valueOf(ticket.ticketFare + ticket.gstCharge)}"-->
@@ -64,11 +66,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
+        android:text="@{String.valueOf(ticket.ticketFare)}"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
+        android:visibility="@{ticket.isFareExpanded ? View.VISIBLE : View.GONE}"
         app:layout_constraintBaseline_toBaselineOf="@+id/ticketFareLabel"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        android:text="@{String.valueOf(ticket.ticketFare)}"
-        android:visibility="@{ticket.isFareExpanded ? View.VISIBLE : View.GONE}"
         tools:text="1925.00" />
 
     <TextView
@@ -78,8 +81,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Ticket Fare:"
-        android:visibility="@{ticket.isFareExpanded ? View.VISIBLE : View.GONE}"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
+        android:visibility="@{ticket.isFareExpanded ? View.VISIBLE : View.GONE}"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -88,11 +92,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
+        android:text="@{String.valueOf(ticket.gstCharge)}"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
+        android:visibility="@{ticket.isFareExpanded ? View.VISIBLE : View.GONE}"
         app:layout_constraintBaseline_toBaselineOf="@+id/gstLabel"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        android:text="@{String.valueOf(ticket.gstCharge)}"
-        android:visibility="@{ticket.isFareExpanded ? View.VISIBLE : View.GONE}"
         tools:text="50.00" />
 
     <android.support.constraint.Guideline

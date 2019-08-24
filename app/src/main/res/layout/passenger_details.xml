@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="Child:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         app:layout_constraintBaseline_toBaselineOf="@+id/adultLabel"
         app:layout_constraintStart_toEndOf="@+id/adultText" />
@@ -34,6 +35,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:text="Adults:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,11 +47,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
 
+        android:text="@{ticket.adults}"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         app:layout_constraintBaseline_toBaselineOf="@+id/adultLabel"
         app:layout_constraintStart_toEndOf="@+id/adultLabel"
-        android:text="@{ticket.adults}"
-        tools:text="4"/>
+        tools:text="4" />
 
     <TextView
         android:id="@+id/childText"
@@ -57,11 +60,12 @@
         android:layout_height="21dp"
         android:layout_marginStart="8dp"
 
+        android:text="@{ticket.child}"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         app:layout_constraintBaseline_toBaselineOf="@+id/childLabel"
         app:layout_constraintStart_toEndOf="@+id/childLabel"
-        android:text="@{ticket.child}"
-        tools:text="4"/>
+        tools:text="4" />
 
     <TextView
         android:id="@+id/passNameLabel"
@@ -70,6 +74,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Passenger Name: "
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -81,10 +86,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Passenger Mobile No:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passNameLabel"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/passNameLabel" />
 
     <TextView
         android:id="@+id/passAddLabel"
@@ -93,6 +98,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Passenger Address:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passMobileLabel" />
@@ -102,10 +108,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:text="@{ticket.passFname}"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         app:layout_constraintBaseline_toBaselineOf="@+id/passNameLabel"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        android:text="@{ticket.passFname}"
         tools:text="Sunny" />
 
     <TextView
@@ -114,10 +121,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
 
+        android:text="@{ticket.mobileNo}"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         app:layout_constraintBaseline_toBaselineOf="@+id/passMobileLabel"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        android:text="@{ticket.mobileNo}"
         tools:text="9462777655" />
 
     <TextView
@@ -125,10 +133,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:text="@{ticket.passAddress}"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         app:layout_constraintBaseline_toBaselineOf="@+id/passAddLabel"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        android:text="@{ticket.passAddress}"
         tools:text="Hazira Road, Surat" />
 
     <TextView
@@ -137,6 +146,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="@{String.valueOf(ticket.passMname.charAt(0))}"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         app:layout_constraintBaseline_toBaselineOf="@+id/passFnameText"
         app:layout_constraintStart_toEndOf="@+id/passFnameText"
@@ -148,6 +158,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="@{ticket.passLname}"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         app:layout_constraintBaseline_toBaselineOf="@+id/passMnameText"
         app:layout_constraintStart_toEndOf="@+id/passMnameText"
@@ -158,7 +169,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="170dp" />
+        app:layout_constraintGuide_begin="194dp" />
 </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>
 </layout>

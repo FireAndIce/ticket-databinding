@@ -24,6 +24,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="PNR No: "
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,10 +34,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:text="@{String.valueOf(ticket.pnrNo)}"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         app:layout_constraintBaseline_toBaselineOf="@+id/pnrNoLabel"
         app:layout_constraintStart_toEndOf="@+id/pnrNoLabel"
-        android:text="@{String.valueOf(ticket.pnrNo)}"
         tools:text="7841236448" />
 
     <TextView
@@ -46,6 +48,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Transaction Id:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pnrNoLabel" />
@@ -57,6 +60,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Train No:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent" />
@@ -68,6 +72,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Quota:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/trainNoLabel" />
@@ -78,10 +83,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:text="@{String.valueOf(ticket.trainNo)}"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         app:layout_constraintStart_toEndOf="@+id/trainNoLabel"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="@{String.valueOf(ticket.trainNo)}"
         tools:text="54237" />
 
     <TextView
@@ -89,10 +95,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:text="@{ticket.quota}"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         app:layout_constraintBaseline_toBaselineOf="@+id/quotaLabel"
         app:layout_constraintStart_toEndOf="@+id/quotaLabel"
-        android:text="@{ticket.quota}"
         tools:text="GENERAL" />
 
     <TextView
@@ -100,10 +107,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:text="@{String.valueOf(ticket.transactionId)}"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="@android:color/black"
         app:layout_constraintBaseline_toBaselineOf="@+id/transactionIdLabel"
         app:layout_constraintStart_toEndOf="@+id/transactionIdLabel"
-        android:text="@{String.valueOf(ticket.transactionId)}"
         tools:text="78945132456" />
 
     <android.support.constraint.Guideline
