@@ -4,6 +4,7 @@ import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 import android.databinding.Bindable;
 import android.databinding.BindingAdapter;
+import android.util.Log;
 
 
 import java.time.LocalDateTime;
@@ -40,6 +41,19 @@ public class TicketViewModel extends ViewModel {
 
     public MutableLiveData<Boolean> isFareExpanded = new MutableLiveData<>();
 
+    public MutableLiveData<Boolean> nightModeChecked = new MutableLiveData<>();
+
+
+/*    public MutableLiveData<Boolean> getNightModeChecked() {
+        Log.d("TicketViewModel", "In getNightModeChecked()");
+        return nightModeChecked;
+    }*/
+
+    /*public void setNightModeChecked(Boolean value) {
+        Log.d("TicketViewModel", "In setNightModeChecked()");
+        nightModeChecked.setValue(value);
+    }*/
+
     public String getQuota() {
         return quota.name();
     }
@@ -70,4 +84,11 @@ public class TicketViewModel extends ViewModel {
         return ticketFare + gstCharge;
     }
 
+    public void setNightMode(boolean nightModeChecked) {
+        if (nightModeChecked) {
+
+        } else {
+
+        }
+    }
 }

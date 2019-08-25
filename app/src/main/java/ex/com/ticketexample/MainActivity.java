@@ -2,6 +2,7 @@ package ex.com.ticketexample;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,5 +15,10 @@ public class MainActivity extends AppCompatActivity {
                     .replace(R.id.container, TicketFragment.newInstance())
                     .commitNow();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return super.onCreateOptionsMenu(menu);
     }
 }

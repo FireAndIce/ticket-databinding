@@ -9,12 +9,17 @@
         <variable
             name="ticket"
             type="ex.com.ticketexample.viewmodel.TicketViewModel" />
+
+        <variable
+            name="backgroundColor"
+            type="int" />
     </data>
 <android.support.constraint.ConstraintLayout 
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TicketFragment">
+    tools:context=".TicketFragment"
+    app:nightMode="@={ticket.nightModeChecked}">
 
     <TextView
         android:id="@+id/message"

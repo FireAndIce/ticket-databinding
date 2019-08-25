@@ -4,12 +4,19 @@ import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.BindingAdapter;
 import android.databinding.DataBindingUtil;
+import android.databinding.InverseBindingAdapter;
+import android.databinding.InverseBindingListener;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.MenuItemCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -34,6 +41,38 @@ public class TicketFragment extends Fragment {
 
     public static TicketFragment newInstance() {
         return new TicketFragment();
+    }
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.fragment_menu, menu);
+
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.nightmode:
+
+                toggleNightMode(item);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void toggleNightMode(MenuItem item) {
+        boolean toggleNightMode = !item.isChecked();
+        item.setChecked(toggleNightMode);
+        ticketViewModel.nightModeChecked.setValue(toggleNightMode);
     }
 
     @Nullable
@@ -84,6 +123,7 @@ public class TicketFragment extends Fragment {
         ticketViewModel.child = ticket.getChild();
 
 
+//        ticketViewModel.setNightModeChecked(true);
 
         /* Binding VIEWMODEL to VIEW */
         mFragBinding.setTicket(ticketViewModel);
@@ -134,5 +174,34 @@ public class TicketFragment extends Fragment {
         Log.d(TAG, "In computeTotalFare()");
         view.setText(String.valueOf(ticketViewModel.getTotalFare()));
 
+    }
+
+    @BindingAdapter("app:nightMode")
+    public static void setNightMode(ConstraintLayout view,
+                                    MutableLiveData<Boolean> nightModeVal) {
+//        nightModeChecked.setValue(!nightModeChecked.getValue());
+        Log.d(TAG, "In setNightMode()");
+
+        if (nightModeVal.getValue() == null) {
+            nightModeVal.setValue(false);
+        }
+
+
+        if (nightModeVal.getValue())
+            view.setBackgroundResource(R.color.nightMode);
+        else
+            view.setBackgroundResource(R.color.lightGray);
+    }
+
+    @InverseBindingAdapter(attribute = "app:nightMode", event = "app:nightModeAttrChanged")
+    public static Boolean getNightMode(View view) {
+        Log.d(TAG, "In getNightMode()");
+        return null;
+    }
+
+    @BindingAdapter("app:nightModeAttrChanged")
+    public static void setListeners(ConstraintLayout view,
+                                    final InverseBindingListener attrChange) {
+        Log.d(TAG, "In setListeners()");
     }
 }
