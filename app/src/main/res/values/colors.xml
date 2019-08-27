@@ -4,6 +4,6 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="lightGray">#e2e2e2</color>
-    <color name="nightMode">#a8a8a8</color>
+    <drawable name="lightGray">#e2e2e2</drawable>
+    <drawable name="nightMode">#a8a8a8</drawable>
 </resources>

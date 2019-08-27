@@ -9,17 +9,17 @@
         <variable
             name="ticket"
             type="ex.com.ticketexample.viewmodel.TicketViewModel" />
-
+<!--
         <variable
             name="backgroundColor"
-            type="int" />
+            type="int" />-->
     </data>
 <android.support.constraint.ConstraintLayout 
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TicketFragment"
-    app:nightMode="@={ticket.nightModeChecked}">
+    android:background="@{ticket.nightModeChecked ? @drawable/nightMode : @drawable/lightGray}" >
 
     <TextView
         android:id="@+id/message"
@@ -131,6 +131,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView37"
         tools:src="@drawable/collapse" />
+
+    <CheckBox
+        android:id="@+id/nightModeCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Night Mode"
+        android:checked="@={ticket.nightModeChecked}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
 </layout>

@@ -14,6 +14,7 @@ import ex.com.ticketexample.model.Ticket;
 
 /* ViewModels are classes. Used to update the UI */
 public class TicketViewModel extends ViewModel {
+    public static final String TAG = TicketViewModel.class.getName();
 
     public Long pnrNo;
     public Integer trainNo;
@@ -80,15 +81,25 @@ public class TicketViewModel extends ViewModel {
         isFareExpanded.setValue(!isFareExpanded.getValue());
     }
 
-    public Double getTotalFare() {
+    public Double computeTotalFare() {
         return ticketFare + gstCharge;
     }
+/*
+    public MutableLiveData<Boolean> getNightModeChecked() {
+        return nightModeChecked;
+    }
 
-    public void setNightMode(boolean nightModeChecked) {
-        if (nightModeChecked) {
+    public void setNightModeChecked(MutableLiveData<Boolean> nightModeChecked) {
+        this.nightModeChecked = nightModeChecked;
+    }*/
 
-        } else {
+    public MutableLiveData<Boolean> getNightModeChecked() {
+        Log.d(TAG, "In getNightModeChecked()");
+        return nightModeChecked;
+    }
 
-        }
+    public void setNightModeChecked(Boolean nightModeChecked) {
+        Log.d(TAG, "In setNightModeChecked()");
+        this.nightModeChecked.setValue(nightModeChecked);
     }
 }
