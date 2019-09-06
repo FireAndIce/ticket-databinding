@@ -10,7 +10,8 @@
 
 <android.support.v7.widget.CardView
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@{ticket.nightModeChecked ? @color/nightMode : @color/colorWhite}">
 
 <android.support.constraint.ConstraintLayout
     android:layout_width="match_parent"
@@ -23,7 +24,7 @@
         android:layout_marginStart="8dp"
         android:text="Child:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/black"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintBaseline_toBaselineOf="@+id/adultLabel"
         app:layout_constraintStart_toEndOf="@+id/adultText" />
 
@@ -36,7 +37,7 @@
         android:layout_marginBottom="8dp"
         android:text="Adults:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/black"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passAddLabel" />
@@ -49,7 +50,7 @@
 
         android:text="@{ticket.adults}"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/black"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintBaseline_toBaselineOf="@+id/adultLabel"
         app:layout_constraintStart_toEndOf="@+id/adultLabel"
         tools:text="4" />
@@ -62,7 +63,7 @@
 
         android:text="@{ticket.child}"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/black"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintBaseline_toBaselineOf="@+id/childLabel"
         app:layout_constraintStart_toEndOf="@+id/childLabel"
         tools:text="4" />
@@ -75,7 +76,7 @@
         android:layout_marginTop="8dp"
         android:text="Passenger Name: "
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/black"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -87,7 +88,7 @@
         android:layout_marginTop="8dp"
         android:text="Passenger Mobile No:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/black"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passNameLabel" />
 
@@ -99,7 +100,7 @@
         android:layout_marginTop="8dp"
         android:text="Passenger Address:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/black"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passMobileLabel" />
 
@@ -110,7 +111,7 @@
         android:layout_marginStart="8dp"
         android:text="@{ticket.passFname}"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/black"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintBaseline_toBaselineOf="@+id/passNameLabel"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         tools:text="Sunny" />
@@ -123,7 +124,7 @@
 
         android:text="@{ticket.mobileNo}"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/black"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintBaseline_toBaselineOf="@+id/passMobileLabel"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         tools:text="9462777655" />
@@ -135,7 +136,7 @@
         android:layout_marginStart="8dp"
         android:text="@{ticket.passAddress}"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/black"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintBaseline_toBaselineOf="@+id/passAddLabel"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         tools:text="Hazira Road, Surat" />
@@ -147,7 +148,7 @@
         android:layout_marginStart="8dp"
         android:text="@{String.valueOf(ticket.passMname.charAt(0))}"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/black"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintBaseline_toBaselineOf="@+id/passFnameText"
         app:layout_constraintStart_toEndOf="@+id/passFnameText"
         tools:text="Mohan" />
@@ -159,7 +160,7 @@
         android:layout_marginStart="8dp"
         android:text="@{ticket.passLname}"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/black"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintBaseline_toBaselineOf="@+id/passMnameText"
         app:layout_constraintStart_toEndOf="@+id/passMnameText"
         tools:text="Patel" />

@@ -9,10 +9,13 @@
             name="ticket"
             type="ex.com.ticketexample.viewmodel.TicketViewModel" />
     </data>
-<android.support.v7.widget.CardView
 
+<android.support.v7.widget.CardView
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@{ticket.nightModeChecked ? @color/nightMode : @color/colorWhite}"
+    >
+    <!--android:background="@{ticket.nightModeChecked ? @drawable/nightMode : @drawable/lightGray}"-->
 <android.support.constraint.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -25,7 +28,7 @@
         android:layout_marginTop="8dp"
         android:text="PNR No: "
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/black"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,7 +39,7 @@
         android:layout_marginStart="8dp"
         android:text="@{String.valueOf(ticket.pnrNo)}"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/black"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintBaseline_toBaselineOf="@+id/pnrNoLabel"
         app:layout_constraintStart_toEndOf="@+id/pnrNoLabel"
         tools:text="7841236448" />
@@ -49,7 +52,7 @@
         android:layout_marginTop="8dp"
         android:text="Transaction Id:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/black"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pnrNoLabel" />
 
@@ -61,7 +64,7 @@
         android:layout_marginTop="8dp"
         android:text="Train No:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/black"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,7 +76,7 @@
         android:layout_marginTop="8dp"
         android:text="Quota:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/black"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/trainNoLabel" />
 
@@ -85,7 +88,7 @@
         android:layout_marginTop="8dp"
         android:text="@{String.valueOf(ticket.trainNo)}"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/black"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintStart_toEndOf="@+id/trainNoLabel"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="54237" />
@@ -97,7 +100,7 @@
         android:layout_marginStart="8dp"
         android:text="@{ticket.quota}"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/black"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintBaseline_toBaselineOf="@+id/quotaLabel"
         app:layout_constraintStart_toEndOf="@+id/quotaLabel"
         tools:text="GENERAL" />
@@ -109,7 +112,7 @@
         android:layout_marginStart="8dp"
         android:text="@{String.valueOf(ticket.transactionId)}"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        android:textColor="@android:color/black"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintBaseline_toBaselineOf="@+id/transactionIdLabel"
         app:layout_constraintStart_toEndOf="@+id/transactionIdLabel"
         tools:text="78945132456" />

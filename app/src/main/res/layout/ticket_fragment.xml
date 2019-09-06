@@ -29,9 +29,11 @@
         android:layout_marginTop="8dp"
         android:text="Ticket Details"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@android:color/black"
+
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <!--android:textColor="@android:color/black"-->
 
     <include
         android:id="@+id/ticketInfoLayout"
@@ -67,7 +69,7 @@
         android:layout_marginTop="8dp"
         android:text="Passenger Details"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@android:color/black"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/journeyDetailsLayout" />
 
@@ -105,7 +107,7 @@
         android:layout_marginTop="8dp"
         android:text="Journey Details"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@android:color/black"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fareDetailsLayout" />
 
@@ -117,7 +119,7 @@
         android:layout_marginTop="8dp"
         android:text="Fare Details"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@android:color/black"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ticketInfoLayout" />
 
@@ -139,6 +141,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="Night Mode"
+        android:textColor="@{ticket.nightModeChecked ? @color/colorWhite : @color/colorBlack}"
         android:checked="@={ticket.nightModeChecked}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

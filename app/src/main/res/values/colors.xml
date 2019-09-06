@@ -5,5 +5,13 @@
     <color name="colorAccent">#D81B60</color>
 
     <drawable name="lightGray">#e2e2e2</drawable>
-    <drawable name="nightMode">#a8a8a8</drawable>
+    <color name="lightGray">#e2e2e2</color>
+    <!--<drawable name="nightMode">#a8a8a8</drawable>-->
+    <drawable name="nightMode">#16202A</drawable>
+    <color name="nightMode">#16202A</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+
+
+
 </resources>
